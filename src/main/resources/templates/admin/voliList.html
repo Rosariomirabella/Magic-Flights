@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Voli programmatii</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body class="flight-report-page">
+  <div class="flight-report-container">
+  <h1>Elenco dei voli in programma</h1>
+
+  <div th:if="${voli != null and !voli.isEmpty()}">
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID volo</th>
+          <th>Data</th>
+          <th>Città di partenza</th>
+          <th>Orario di partenza</th>
+          <th>Città di arrivo</th>
+          <th>Orario di arrivo</th>
+          <th>Passeggeri prenotati</th>
+          <th>Bagaglio Prenotato (kg)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="volo : ${voli}">
+          <td th:text="${volo.idVolo}">ID</td>
+          <td th:text="${volo.giorno}">2025-04-16</td>
+          <td th:text="${volo.cittaPartenza}">Partenza</td>
+          <td th:text="${#temporals.format(volo.oraPartenza, 'HH:mm')}">12:00</td>
+          <td th:text="${volo.cittaArrivo}">Arrivo</td>
+          <td th:text="${#temporals.format(volo.oraArrivo, 'HH:mm')}">14:30</td>
+          <td th:text="${volo.passeggeri}">0</td>
+          <td th:text="${volo.merci}">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div th:if="${voli == null or voli.isEmpty()}">
+    <p>Nessun volo in programma</p>
+  </div>
+
+  <p><a th:href="@{/admin/dashboard}">Torna alla Dashboard</a></p>
+</div>
+</body>
+</html>

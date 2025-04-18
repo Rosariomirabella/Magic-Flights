@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Elenco voli</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body class="results-page">
+    <header>
+        <h1 th:text="
+            'Voli disponibili per la tratta '
+            + ${cittaPartenza}
+            + '-'
+            + ${cittaArrivo}
+        ">Voli disponibili per la tratta …</h1>
+    </header>
+    <main>
+        <table border="1">
+            <thead>  
+                <tr>
+                    <th>ID volo</th>
+                    <th>Data</th>
+                    <th>Città di partenza</th>
+                    <th>Città di arrivo</th>
+                    <th>Orario di partenza</th>
+                    <th>Orario di arrivo</th>
+                    <th>Posti disponibili</th>
+                    <th>Bagaglio disponibile (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="volo : ${voli}">
+                    <td th:text="${volo.idVolo}">ID_Volo</td>
+                    <td th:text="${volo.giorno}">Giorno</td>
+                    <td th:text="${volo.cittaPartenza}">Città Partenza</td>
+                    <td th:text="${volo.cittaArrivo}">Città Arrivo</td>
+                    <td th:text="${#temporals.format(volo.oraPartenza, 'HH:mm')}">
+                        Ora Partenza
+                    </td>
+                    <td th:text="${#temporals.format(volo.oraArrivo, 'HH:mm')}">
+                        Ora Arrivo
+                    </td>
+                    <td th:text="${volo.postiDisponibili}">Passeggeri</td>
+                    <td th:text="${volo.bagagliDisponibili}">Bagaglio</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 20px;">
+            <a th:href="@{/}" class="btn">Torna alla Home</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Magic Flights</p>
+    </footer>
+</body>
+</html>

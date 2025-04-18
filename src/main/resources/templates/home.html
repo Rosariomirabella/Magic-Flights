@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sito ufficiale Magic Flights</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="home-page">
+    <header>
+        <div>
+            <a th:href="@{/admin/login}">Login</a>
+        </div>
+    </header>
+    <main>
+        <form th:action="@{/search}" method="post">
+            <div>
+                <h1><b>Cerca un volo </b></h1>
+            </div>
+            <div>
+                <label for="cittaPartenza">Aeroporto di partenza:</label>
+                <!-- Puoi sostituire questo input con un menu a tendina se hai una lista di aeroporti -->
+                <input type="text" id="cittaPartenza" name="cittaPartenza" placeholder="Inserisci città" required/>
+            </div>
+            <div>
+                <label for="cittaArrivo">Aeroporto di arrivo:</label>
+                <!-- Puoi sostituire questo input con un menu a tendina se hai una lista di aeroporti -->
+                <input type="text" id="cittaArrivo" name="cittaArrivo" placeholder="Inserisci città" required/>
+            </div>
+            <div>
+                <label for="dataPartenza">Scegli la data:</label>
+                <input type="date" id="dataPartenza" name="dataPartenza" required/>
+            </div>
+            <div>
+                <label for="pesoBagaglio">Peso del bagaglio in stiva:</label>
+                <input type="number" id="pesoBagaglio" name="pesoBagaglio" placeholder="kg"min="0" required/>
+            </div>
+            <div>
+                <button type="submit">Cerca</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Magic Flights</p>
+    </footer>
+</class=>
+</html>

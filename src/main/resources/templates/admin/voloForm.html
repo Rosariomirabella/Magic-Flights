@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inserisci nuovo volo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="new-flight-page">
+    <div class="new-flight-container">
+    <h1>Dati volo</h1>
+
+       <!-- Se esiste un messaggio d'errore, lo visualizza -->
+    <div th:if="${errorMessage}" style="color: red;">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+    <form th:action="@{/admin/volo/salva}" th:object="${volo}" method="post">
+        <div>
+            <label for="giorno">Data:</label>
+            <input type="date" id="giorno" th:field="*{giorno}" th:attr="min=${minDate}" required />
+        </div>
+        <div>
+            <label for="cittaPartenza">Aeroporto di partenza:</label>
+            <input type="text" id="cittaPartenza" th:field="*{cittaPartenza}" placeholder="Inserisci città" required />
+        </div>
+        <div>
+            <label for="cittaArrivo">Aeroporto di arrivo:</label>
+            <input type="text" id="cittaArrivo" th:field="*{cittaArrivo}" placeholder="Inserisci città" required />
+        </div>
+        <div>
+            <label for="oraPartenza">Ora di partenza:</label>
+            <!-- ora di partenza -->
+            <input type="datetime-local"
+            th:field="*{oraPartenza}"
+            th:attr="min=${minDateTime}"
+            required />
+
+        </div>
+        <div>
+            <label for="oraArrivo">Ora di arrivo:</label>
+            <!-- ora di arrivo -->
+            <input type="datetime-local"
+            th:field="*{oraArrivo}"
+            th:attr="min=${minDateTime}"
+            required />
+        </div>
+        <div>
+            <label for="tipoAereo">Tipologia aereo:</label>
+            <select id="tipoAereo" name="tipoAereo" required>
+                <option value="" disabled selected>Seleziona</option>
+                <option th:each="aereo : ${listaAerei}" 
+                        th:value="${aereo.tipoAereo}" 
+                        th:text="${aereo.tipoAereo}">
+                </option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Salva</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

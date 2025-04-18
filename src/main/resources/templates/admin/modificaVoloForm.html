@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Modifica tipo aereo</title></head>
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+<body class="update-flight-page">
+    <div class="update-flight-container">
+        <h1>Modifica per il volo con ID <span th:text="${volo.idVolo}"></span></h1>
+
+            <!-- Dettagli dinamici -->
+            <p><strong>Data di partenza:</strong> 
+                <span th:text="${volo.giorno}">Data</span></p>
+
+            <p><strong>Città di partenza:</strong> 
+                <span th:text="${volo.cittaPartenza}">Citta di partenza</span></p>
+            
+            <p><strong>Orario di partenza:</strong> 
+                <span th:text="${#temporals.format(volo.oraPartenza,'HH:mm')}">ora partenza</span></p>
+
+            <p><strong>Città di arrivo:</strong> 
+                <span th:text="${volo.cittaArrivo}">Citta di arrivo </span></p>
+            
+            <p><strong>Orario di arrivo:</strong> 
+                <span th:text="${#temporals.format(volo.oraArrivo,'HH:mm')}">ora di arrivo</span></p>
+
+            <p><strong>Tipo aereo:</strong> 
+                <span th:text="${volo.tipoAereo.tipoAereo}">tipologia di aereo</span></p>
+
+        <!-- Messaggi flash -->
+        <div th:if="${successMessage}" style="color: green;">
+            <p th:text="${successMessage}"></p>
+        </div>
+        <div th:if="${errorMessage}" style="color: red;">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
+        <form th:action="@{/admin/volo/aggiorna}" method="post">
+            <input type="hidden" name="idVolo" th:value="${volo.idVolo}" />
+
+            <!--
+                <div>
+            <label>Tipo attuale:</label>
+            <span th:text="${volo.tipoAereo.tipoAereo}"></span>
+            </div>
+            -->
+
+            <div>
+            <label for="tipoAereo">Nuovo tipo di aereo:</label>
+            <select id="tipoAereo" name="tipoAereo" required>
+                <option value="" disabled selected>Seleziona tipo aereo</option>
+                <option th:each="a : ${listaAerei}"
+                        th:value="${a.tipoAereo}"
+                        th:text="${a.tipoAereo}">
+                </option>
+            </select>
+            </div>
+
+            <div>
+            <button type="submit">Aggiorna</button>
+            </div>
+        </form>
+
+        <p><a th:href="@{/admin/dashboard}">Torna alla Dashboard</a></p>
+</div>
+</body>
+</html>

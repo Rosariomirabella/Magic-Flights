@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nessun volo disponibile</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="no-flights-page">
+    <header class="header-empty"></header>
+
+    <main class="no-flights-container">
+        <h2 class="no-flights-title">Nessun volo disponibile</h2>
+        <p class="no-flights-text">Non ci sono voli corrispondenti ai criteri selezionati.</p>
+        <p class="no-flights-sub"><strong>Prova a: </strong></p>
+        <ul class="no-flights-list">
+            <li>Modificare la data di partenza</li>
+            <li>Scegliere un altro aeroporto</li>
+            <li>Controllare la disponibilità in giorni vicini</li>
+        </ul>
+        <a th:href="@{/}" class="btn">Torna alla Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Magic Flights</p>
+    </footer>
+</body>
+</html>

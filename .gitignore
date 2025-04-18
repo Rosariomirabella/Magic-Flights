@@ -1,0 +1,59 @@
+# ================
+# Maven
+# ================
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/
+
+# ================
+# IntelliJ IDEA
+# ================
+*.iml
+.idea/
+*.ipr
+*.iws
+out/
+
+# ================
+# VS Code
+# ================
+.vscode/
+
+# ================
+# Eclipse
+# ================
+.project
+.classpath
+.settings/
+bin/
+
+# ================
+# OS Files
+# ================
+.DS_Store
+Thumbs.db
+
+# ================
+# Logs
+# ================
+*.log
+
+# ================
+# Temp files
+# ================
+*.swp
+*.tmp
+
+# ================
+# Spring Boot
+# ================
+.spring-boot-devtools.properties
+.env

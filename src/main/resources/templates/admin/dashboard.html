@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <h1>
+            Benvenuto 👋🏻 <span th:text="${loggedInAdmin.username}" >Admin</span>!
+        </h1>
+
+           <!-- Mostra il messaggio di successo se presente -->
+        <div th:if="${successMessage}" style="color: green;">
+            <p th:text="${successMessage}"></p>
+        </div>
+            
+        <ul class="menu">
+            <li> <a th:href="@{/admin/nuovoVolo}">Inserisci un nuovo volo</a></li>
+            <li> <a th:href="@{/admin/modificaVolo}">Modifica tipologia aereo</a></li>
+            <li> <a th:href="@{/admin/cancellaVolo}">Cancella volo</a></li>
+            <li> <a th:href="@{/admin/report}">Voli in programma</a></li>
+        </ul>
+        <div class="logout">
+            <a th:href="@{/admin/logout}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

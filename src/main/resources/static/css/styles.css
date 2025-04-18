@@ -1,0 +1,799 @@
+/* Font elegante da Google Fonts (opzionale) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.home-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.home-page header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.home-page header a {
+    text-decoration: none;
+    color: #1e5b83;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.home-page header a:hover {
+    color: #2563eb;
+}
+
+/* Main */
+.home-page main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.home-page form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.home-page form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1e5b83;
+}
+
+.home-page form div {
+    margin-bottom: 15px;
+}
+
+.home-page label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.home-page input[type="text"],
+.home-page input[type="date"],
+.home-page input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.home-page button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-page button:hover {
+    background-color: #469cd5;
+}
+
+/* Footer */
+.home-page footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #64748b;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.results-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.results-page header {
+    text-align: center;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.results-page header h1 {
+    font-size: 24px;
+    color: #1e5b83;
+}
+
+/* Main */
+.results-page main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Tabella dei voli */
+.results-page table {
+    font-size: 12px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.results-page th, .results-page td {
+    padding: 15px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.results-page thead {
+    background-color: #1e5b83;
+    color: white;
+    font-weight: 600;
+}
+
+.results-page tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Bottone di ritorno */
+.results-page .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.results-page .btn:hover {
+    background-color: #469cd5;
+}
+
+/* Footer */
+.results-page footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #64748b;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.no-flights-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.no-flights-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    margin: 100px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.no-flights-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e5b83;
+    margin-bottom: 20px;
+}
+
+.no-flights-text,
+.no-flights-sub {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.no-flights-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #334155;
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #469cd5;
+}
+
+/* Login Page */
+.login-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #1e5b83;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.login-container form div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    font-size: 14px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background-color: #469cd5;
+}
+
+.error-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Dashboard page */
+.dashboard-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-container {
+    background-color: #ffffff;
+    font-size: 14px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.dashboard-container h1 {
+    color: #1e5b83;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.dashboard-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: green;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.menu li {
+    margin: 12px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #1e5b83;
+    background-color: #e0f2fe;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #2777ac;
+    color: white;
+}
+
+.logout a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1e5b83;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.logout a:hover {
+    color: #7b1919;
+}
+/* Nuovo volo page */
+.new-flight-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.new-flight-container {
+    background-color: #ffffff;
+    font-size:14px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 370px;
+}
+
+.new-flight-container h1 {
+    text-align: center;
+    font-size:24px;
+    color: #1e5b83;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.new-flight-container form div {
+    margin-bottom: 20px;
+}
+
+.new-flight-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.new-flight-container input,
+.new-flight-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.new-flight-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-flight-container button:hover {
+    background-color: #469cd5;
+}
+
+.new-flight-container .error-message {
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Pagina modifica tipo aereo */
+.edit-aircraft-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.edit-aircraft-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.edit-aircraft-container h1 {
+    text-align: center;
+    color: #1e5b83;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.edit-aircraft-container form div {
+    margin-bottom: 20px;
+}
+
+.edit-aircraft-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.edit-aircraft-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.edit-aircraft-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-aircraft-container button:hover {
+    background-color: #469cd5;
+}
+
+.edit-aircraft-container .error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-aircraft-container .success-message {
+    color: green;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-aircraft-container a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #1e5b83;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.edit-aircraft-container a:hover {
+    color: #2563eb;
+}
+
+/* Pagina modifica volo - update-flight */
+.update-flight-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.update-flight-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.update-flight-container h1 {
+    text-align: center;
+    color: #1e5b83;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.update-flight-container p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #374151;
+}
+
+.update-flight-container strong {
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.update-flight-container form div {
+    margin-bottom: 20px;
+}
+
+.update-flight-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.update-flight-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.update-flight-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-flight-container button:hover {
+    background-color: #469cd5;
+}
+
+.update-flight-container .success-message {
+    color: green;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.update-flight-container .error-message {
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.update-flight-container a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #1e5b83;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.update-flight-container a:hover {
+    color: #2563eb;
+}
+
+/* Pagina cancella volo - delete-flight */
+.delete-flight-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1e5b83, #e0f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.delete-flight-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.delete-flight-container h1 {
+    text-align: center;
+    color: #1e5b83;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.delete-flight-container form div {
+    margin-bottom: 20px;
+}
+
+.delete-flight-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.delete-flight-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.delete-flight-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2777ac;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-flight-container button:hover {
+    background-color: #b91c1c;
+}
+
+.delete-flight-container .success-message {
+    color: green;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.delete-flight-container .error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.delete-flight-container a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #1e5b83;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.delete-flight-container a:hover {
+    color: #2563eb;
+}
+
+/* Report voli programmati - flight-report */
+.flight-report-page {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #f1f5f9, #e0f2fe);
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flight-report-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 1000px;
+}
+
+.flight-report-container h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.flight-report-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.flight-report-container th,
+.flight-report-container td {
+    border: 1px solid #cbd5e1;
+    font-size:13px;
+    padding: 12px;
+    text-align: center;
+}
+
+.flight-report-container th {
+    background-color: #f8fafc;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+.flight-report-container tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+.flight-report-container a {
+    display: inline-block;
+    margin-top: 20px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancella volo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body class="delete-flight-page">
+   <div class="delete-flight-container">
+        <h1>Cancella un volo</h1>
+
+        <!-- Messaggio di successo -->
+        <div th:if="${successMessage}" style="color: green; margin-bottom: 1em;">
+            <p th:text="${successMessage}"></p>
+        </div>
+        <!-- Messaggio di errore -->
+        <div th:if="${errorMessage}" style="color: red; margin-bottom: 1em;">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
+        <form th:action="@{/admin/cancellaVolo}" method="post">
+            <div>
+                <label for="idVolo">ID volo:</label>
+                <input type="number" id="idVolo" name="idVolo" min="1" required />
+            </div>
+            <div>
+                <button type="submit">Cancella</button>
+            </div>
+        </form>
+
+        <p><a th:href="@{/admin/dashboard}">Torna alla Dashboard</a></p>
+    </div>
+</body>
+</html>
