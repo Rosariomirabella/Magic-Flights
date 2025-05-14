@@ -20,9 +20,11 @@
             <div>
                 <button type="submit">Accedi</button>
             </div>
+
             <div th:if="${error}" class="error-message">
                 <p th:text="${error}">Credenziali non valide. Riprova.</p>
             </div>
+            
         </form>
     </div>
 </body>
